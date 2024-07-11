@@ -25,7 +25,7 @@ def profile(request):
 
 @login_required
 def profile_update(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
                                    request.FILES,
@@ -46,6 +46,7 @@ def profile_update(request):
         "p_form": p_form
     }
     return render(request, 'users/profile_update.html', context)
+
 
 def logout_view(request):
     logout(request)
